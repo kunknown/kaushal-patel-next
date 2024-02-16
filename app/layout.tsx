@@ -9,11 +9,6 @@ import { AuthContextProvider } from "./shared/context/auth-context";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export const metadata: Metadata = {
-  description: "Kunknown's Website",
-  title: "Kunknown",
-};
-
 export default function RootLayout({ children }: Readonly<PropsWithChildren>) {
   return (
     <DarkThemeContextProvider>

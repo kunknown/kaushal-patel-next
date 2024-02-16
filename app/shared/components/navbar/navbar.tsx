@@ -141,16 +141,16 @@ export default function Navbar() {
                   </Menu>
                 ) : (
                   <Link
-                    href={"/sign-in"}
+                    href={"/login"}
                     className={classNames(
-                      pathname === "/sign-in"
+                      pathname === "/login"
                         ? "bg-gray-400 text-black dark:bg-gray-900 dark:text-white"
                         : "text-gray-800 hover:bg-gray-200 hover:text-black dark:text-gray-300 dark:hover:bg-gray-700 dark:hover:text-white",
                       "rounded-md px-3 py-2 text-sm font-medium",
                     )}
-                    aria-current={pathname === "/sign-in" ? "page" : undefined}
+                    aria-current={pathname === "/login" ? "page" : undefined}
                   >
-                    Sign In
+                    Login
                   </Link>
                 )}
               </div>
