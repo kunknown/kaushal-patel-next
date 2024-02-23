@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import { getMonsterBattleWinner } from "@/app/api/monster-arena/actions";
 import { TBattleRecord, TMonster } from "@/app/shared/types-interfaces/types";
 import monsterList from "./monster-list";
+import MonsterSelection from "./monster-selection";
 
 export default function Page() {
   const [monsterA, setMonsterA] = useState<TMonster | null>(null);
@@ -18,23 +19,15 @@ export default function Page() {
     }
   }, [monsterA, monsterB]);
   return (
-    <>
-      {!monsterA || !monsterB ? (
-        <div>
-          Select Monsters:{" "}
-          {monsterList.map((monster) => (
-            <button
-              key={monster.id}
-              onClick={() =>
-                monsterA ? setMonsterB(monster) : setMonsterA(monster)
-              }
-            >
-              {monster.name}
-            </button>
-          ))}
-          <div>MonsterA: {monsterA?.name}</div>
-          <div>MonsterB: {monsterB?.name}</div>
-        </div>
+    <div className="h-96">
+      {!(monsterA && monsterB) ? (
+        <MonsterSelection
+          monsterList={monsterList}
+          monsterA={monsterA as TMonster}
+          monsterB={monsterB as TMonster}
+          setMonsterA={setMonsterA}
+          setMonsterB={setMonsterB}
+        />
       ) : (
         <>
           <div>
@@ -49,6 +42,6 @@ export default function Page() {
           <div>Winner is {`${battleRecord?.winner.name}`}</div>
         </>
       )}
-    </>
+    </div>
   );
 }
