@@ -1,4 +1,4 @@
-import { TMonster } from "@/app/shared/types-interfaces/types";
+import { TMonster } from "@/app/shared/types-interfaces-enums/types";
 
 const monsterList: TMonster[] = [
   {
@@ -7,7 +7,9 @@ const monsterList: TMonster[] = [
     defense: 75,
     health: 100,
     id: 1,
-    name: "Godzilla",
+    image: "https://img.icons8.com/color/100/kawaii-dinosaur--v2.png",
+    initials: "CG",
+    name: "Cute Godzilla",
   },
   {
     agility: 1,
@@ -15,7 +17,9 @@ const monsterList: TMonster[] = [
     defense: 100,
     health: 100,
     id: 2,
-    name: "Zombie Dragon",
+    image: "https://img.icons8.com/color/100/dragon.png",
+    initials: "FD",
+    name: "Fire Dragon",
   },
   {
     agility: 50,
@@ -23,6 +27,9 @@ const monsterList: TMonster[] = [
     defense: 25,
     health: 50,
     id: 3,
+    image:
+      "https://img.icons8.com/external-wanicon-flat-wanicon/100/external-pirate-halloween-costume-avatar-wanicon-flat-wanicon.png",
+    initials: "CP",
     name: "Cursed Pirate",
   },
   {
@@ -31,7 +38,9 @@ const monsterList: TMonster[] = [
     defense: 75,
     health: 25,
     id: 4,
-    name: "Confused Ghost",
+    image: "https://img.icons8.com/3d-fluency/94/ghost.png",
+    initials: "FG",
+    name: "Funny Ghost",
   },
   {
     agility: 25,
@@ -39,7 +48,9 @@ const monsterList: TMonster[] = [
     defense: 25,
     health: 75,
     id: 5,
-    name: "Big Foot",
+    image: "https://img.icons8.com/emoji/100/troll-emoji.png",
+    initials: "BT",
+    name: "Baby Troll",
   },
 ];
 

@@ -8,13 +8,8 @@ import { Disclosure, Menu, Transition } from "@headlessui/react";
 import React, { Fragment } from "react";
 import Link from "next/link";
 import { useAuthContext } from "../../hooks/useAuthContext";
-import { TAuthContext } from "../../types-interfaces/types";
-
-const navigation = [
-  { href: "/", name: "Home" },
-  { href: "/projects", name: "Projects" },
-  { href: "/contact", name: "Contact" },
-];
+import { TAuthContext } from "../../types-interfaces-enums/types";
+import { NAVIGATION_MENU } from "../../constants/constants";
 
 export default function Navbar() {
   const { isAuthenticated }: TAuthContext = useAuthContext();
@@ -41,7 +36,7 @@ export default function Navbar() {
               <div className="hidden sm:flex items-center justify-center">
                 <div className="hidden sm:block">
                   <div className="flex space-x-4">
-                    {navigation.map((item) => (
+                    {NAVIGATION_MENU.map((item) => (
                       <Link
                         key={item.name}
                         href={item.href}
@@ -141,17 +136,29 @@ export default function Navbar() {
                   </Menu>
                 ) : (
                   <Link
-                    href={"/login"}
+                    href={"/settings"}
                     className={classNames(
                       pathname === "/login"
                         ? "bg-gray-400 text-black dark:bg-gray-900 dark:text-white"
                         : "text-gray-800 hover:bg-gray-200 hover:text-black dark:text-gray-300 dark:hover:bg-gray-700 dark:hover:text-white",
                       "rounded-md px-3 py-2 text-sm font-medium",
                     )}
-                    aria-current={pathname === "/login" ? "page" : undefined}
+                    aria-current={pathname === "/settings" ? "page" : undefined}
                   >
-                    Login
+                    Settings
                   </Link>
+                  // <Link
+                  //   href={"/login"}
+                  //   className={classNames(
+                  //     pathname === "/login"
+                  //       ? "bg-gray-400 text-black dark:bg-gray-900 dark:text-white"
+                  //       : "text-gray-800 hover:bg-gray-200 hover:text-black dark:text-gray-300 dark:hover:bg-gray-700 dark:hover:text-white",
+                  //     "rounded-md px-3 py-2 text-sm font-medium",
+                  //   )}
+                  //   aria-current={pathname === "/login" ? "page" : undefined}
+                  // >
+                  //   Login
+                  // </Link>
                 )}
               </div>
             </div>
@@ -159,7 +166,7 @@ export default function Navbar() {
           {/* Mobile main menu */}
           <Disclosure.Panel className="sm:hidden">
             <div className="space-y-1 px-2 pb-3 pt-2">
-              {navigation.map((item) => (
+              {NAVIGATION_MENU.map((item) => (
                 <Disclosure.Button
                   key={item.name}
                   as={Link}
@@ -167,7 +174,7 @@ export default function Navbar() {
                   className={classNames(
                     item.href === pathname
                       ? "bg-gray-200 dark:bg-gray-900 text-black dark:text-white"
-                      : "text-gray-300 hover:bg-gray-700 hover:text-white",
+                      : "text-gray-700 dark:text-gray-300 hover:bg-gray-700 hover:text-white",
                     "block rounded-md px-3 py-2 text-base font-medium",
                   )}
                   aria-current={item.href === pathname ? "page" : undefined}

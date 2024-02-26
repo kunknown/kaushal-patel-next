@@ -18,10 +18,10 @@ export default function SwitchToggle({
     <div className="flex items-center justify-center">
       {/* Dark mode toggle */}
       <Switch.Group>
-        <div className="flex flex-col flex-shrink-0 items-center">
+        <div className="w-full flex shrink-0 items-center justify-between">
           <Switch.Label
             className={
-              "text-xs font-semibold text-gray-800 text dark:text-gray-300"
+              "text-base font-semibold text-gray-800 text dark:text-gray-300"
             }
           >
             Toggle Dark Mode

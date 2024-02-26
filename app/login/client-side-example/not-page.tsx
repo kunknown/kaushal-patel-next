@@ -1,6 +1,6 @@
 "use client";
-import { useTransition } from "react";
-import { submitLoginData, createNewUser } from "./login-form-server";
+import React from "react";
+import { submitLoginData } from "./login-form-server";
 
 // type TLoginFormClientParams = {
 //   submit: (arg0: FormData) => Promise<void>;
@@ -8,8 +8,6 @@ import { submitLoginData, createNewUser } from "./login-form-server";
 // };
 
 export default function LoginFormClient() {
-  const [isPending, startTransition] = useTransition();
-  console.log("isPending", isPending);
   return (
     <>
       <form action={submitLoginData}>
@@ -21,11 +19,7 @@ export default function LoginFormClient() {
         <input name="password" type="password" />
         <input type="submit" />
       </form>
-      <button
-        name="get-user"
-        type="submit"
-        onClick={() => startTransition(() => createNewUser())}
-      >
+      <button name="get-user" type="submit" onClick={() => {}}>
         Get User
       </button>
     </>

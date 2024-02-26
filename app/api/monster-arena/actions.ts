@@ -4,7 +4,7 @@ import {
   TBattleHistory,
   TBattleRecord,
   TMonster,
-} from "@/app/shared/types-interfaces/types";
+} from "@/app/shared/types-interfaces-enums/types";
 
 export async function getMonsterBattleWinner(
   monsterA: TMonster,

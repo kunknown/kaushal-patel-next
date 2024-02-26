@@ -7,7 +7,7 @@ import {
   mongooseDisconnect,
 } from "../shared/utility/mongoose-utils";
 import bcrypt from "bcrypt";
-import { TAuthData, TUserData } from "../shared/types-interfaces/types";
+import { TAuthData, TUserData } from "../shared/types-interfaces-enums/types";
 // import { getServerSession } from "next-auth";
 // import { kv } from "@vercel/kv";
 import { drizzle } from "drizzle-orm/vercel-postgres";

@@ -1,22 +1,24 @@
+import { ObjectId } from "mongodb";
+
 export type TAuthContext = {
   isAuthenticated: boolean;
   setIsAuthenticated: Function;
 };
 
-// export type TUserData = {
-//   _id: ObjectId;
-//   email: string;
-//   name: string;
-//   password: string;
-//   settings: {
-//     darkMode: boolean;
-//   };
-// };
+export type TUserData = {
+  _id: ObjectId;
+  email: string;
+  name: string;
+  password: string;
+  settings: {
+    darkMode: boolean;
+  };
+};
 
-// export type TAuthData = {
-//   email: string;
-//   password: string;
-// };
+export type TAuthData = {
+  email: string;
+  password: string;
+};
 
 export type TBattleHistory = {
   attackMonster: TMonster;
@@ -38,5 +40,12 @@ export type TMonster = {
   defense: number;
   health: number;
   id: number;
+  image: string;
+  name: string;
+  initials: string;
+};
+
+export type TNavigationMenu = {
+  href: string;
   name: string;
 };

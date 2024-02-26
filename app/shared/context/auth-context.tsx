@@ -7,7 +7,7 @@ import {
   useMemo,
   useState,
 } from "react";
-import { TAuthContext } from "../types-interfaces/types";
+import { TAuthContext } from "../types-interfaces-enums/types";
 
 export const AuthContext = createContext<TAuthContext>({
   isAuthenticated: false,

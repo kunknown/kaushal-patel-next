@@ -1,6 +1,4 @@
 "use server";
-import { LoginFormClient } from "./page";
-import mongoose from "mongoose";
 
 const { MONGODB_URI } = process.env;
 
