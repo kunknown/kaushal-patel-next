@@ -1,12 +1,10 @@
-import { ObjectId } from "mongodb";
-
 export type TAuthContext = {
   isAuthenticated: boolean;
   setIsAuthenticated: Function;
 };
 
 export type TUserData = {
-  _id: ObjectId;
+  _id: number;
   email: string;
   name: string;
   password: string;
