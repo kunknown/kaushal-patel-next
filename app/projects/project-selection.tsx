@@ -2,38 +2,7 @@
 import React, { MutableRefObject, useRef } from "react";
 import ProjectSelectionCard from "./project-selection-card";
 import Image from "next/image";
-
-type TProjects = {
-  available: boolean;
-  description: string;
-  id: number;
-  link: string;
-  title: string;
-};
-const PROJECTS: TProjects[] = [
-  {
-    available: true,
-    description:
-      "Pick your 2 favorite monsters to battle against each other in a turn based Monster Battle Arena! The winner is announced and the battle record details are available for the curious.",
-    id: 1,
-    link: "projects/monster-battle",
-    title: "Monster Batle",
-  },
-  {
-    available: false,
-    description: "Coming soon...",
-    id: 2,
-    link: "",
-    title: "Org Structure Tool",
-  },
-  {
-    available: false,
-    description: "Coming soon...",
-    id: 3,
-    link: "",
-    title: "Other Projects",
-  },
-];
+import { PROJECTS } from "../shared/constants/constants";
 
 export default function ProjectSelection() {
   let projectSelectionRef = useRef(null);

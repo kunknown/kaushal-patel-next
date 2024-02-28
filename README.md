@@ -35,32 +35,13 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
 
-## Features list (TO DO):
-1. Monster Battle
-- ui update
--- card colors
--- selection borders
--- hover ui
--- reset button
--- button ui
--- 
-- views - arena/battle record
-- 
-3. Project selection UI
-- cards
-- animations
-2. Home Page
-- My pic
-- My basic info
-- animation?
-4. Footer
-- my image
-- button UI update
-- LinkedIn link update
-5. Sign up
-6. Sign in
+## Upcoming Features:
+
+1. Sign up
+2. Sign in
 - authentication
 - authorization
 - sync with monster battle
 -- record battle history of user
 -- display battle history of user
+3. 3D Character Builder

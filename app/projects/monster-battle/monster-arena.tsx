@@ -1,19 +1,17 @@
 "use client";
 
-import { getMonsterBattleWinner } from "@/app/api/monster-arena/actions";
-import {
-  TBattleRecord,
-  TMonster,
-} from "@/app/shared/types-interfaces-enums/types";
+import { TBattleRecord, TMonster } from "@/shared/types-interfaces-enums/types";
 import { useState } from "react";
-import monsterList from "./monster-list";
 import MonsterCard from "./monster-card";
 import MonsterBattleHistory from "./monster-battle-history";
-import { MONSTER_ARENA_VIEWS } from "@/app/shared/types-interfaces-enums/enums";
+import { MONSTER_ARENA_VIEWS } from "@/shared/types-interfaces-enums/enums";
 import MonsterArenaButton from "./monster-arena-button";
 import Link from "next/link";
+import { getMonsterBattleWinner } from "@/app/api/monster-arena/actions";
 
-export default function MonsterArena() {
+export default function MonsterArena({
+  monsterList,
+}: Readonly<{ monsterList: TMonster[] }>) {
   const [monsterA, setMonsterA] = useState<TMonster | null>(null);
   const [monsterB, setMonsterB] = useState<TMonster | null>(null);
   const [view, setView] = useState<MONSTER_ARENA_VIEWS>(

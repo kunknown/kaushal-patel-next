@@ -1,7 +1,12 @@
+import { users, monsters } from "@/shared/database/schema";
+
 export type TAuthContext = {
   isAuthenticated: boolean;
   setIsAuthenticated: Function;
 };
+
+export type NewUser = typeof users.$inferInsert;
+export type NewMonster = typeof monsters.$inferInsert;
 
 export type TUserData = {
   _id: number;
@@ -46,4 +51,12 @@ export type TMonster = {
 export type TNavigationMenu = {
   href: string;
   name: string;
+};
+
+export type TProjects = {
+  available: boolean;
+  description: string;
+  id: number;
+  link: string;
+  title: string;
 };
