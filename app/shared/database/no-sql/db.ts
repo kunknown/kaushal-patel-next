@@ -1,7 +1,7 @@
 import { ConnectOptions, Mongoose } from "mongoose";
-import { USER_DB } from "../models-schemas/user";
+import { USER_DB } from "./models/user";
 
-export const mongooseUserDbConnectOptions: ConnectOptions = {
+const mongooseUserDbConnectOptions: ConnectOptions = {
   dbName: USER_DB,
   retryWrites: true,
   w: "majority",

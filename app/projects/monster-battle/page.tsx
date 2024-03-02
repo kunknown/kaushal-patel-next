@@ -1,6 +1,6 @@
 import React from "react";
-import MonsterArena from "./monster-arena";
-import { getMonsters } from "@/shared/database/db";
+import MonsterArena from "../../lib/ui/monster-battle/monster-arena";
+import { getMonsters } from "@/shared/database/sql/db";
 
 export default async function MonsterBattle() {
   const monsterList = await getMonsters();

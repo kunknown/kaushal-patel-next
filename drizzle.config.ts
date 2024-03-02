@@ -1,4 +1,4 @@
-import "@/shared/database/config";
+import "@/shared/database/sql/config";
 import { defineConfig } from "drizzle-kit";
 
 const { POSTGRES_URL } = process.env;
@@ -9,7 +9,7 @@ export default defineConfig({
   },
   driver: "pg",
   out: "./drizzle",
-  schema: "./app/shared/database/schema.ts",
+  schema: "./app/shared/database/sql/schema.ts",
   strict: true,
   verbose: true,
 });

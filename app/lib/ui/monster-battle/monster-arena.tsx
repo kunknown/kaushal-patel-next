@@ -7,7 +7,7 @@ import MonsterBattleHistory from "./monster-battle-history";
 import { MONSTER_ARENA_VIEWS } from "@/shared/types-interfaces-enums/enums";
 import MonsterArenaButton from "./monster-arena-button";
 import Link from "next/link";
-import { getMonsterBattleWinner } from "@/app/api/monster-arena/actions";
+import { getMonsterBattleWinner } from "@/app/actions/monster-battle-actions";
 
 export default function MonsterArena({
   monsterList,
@@ -28,7 +28,7 @@ export default function MonsterArena({
     }
   };
   return (
-    <div className="w-screen h-screen lg:w-[1000px] lg:h-[800px] p-4 grid grid-cols-4 grid-rows-5 gap-4 bg-gradient-to-b from-emerald-900 to-black rounded-lg">
+    <div className="w-screen h-screen lg:w-[1000px] lg:h-[800px] p-4 grid grid-cols-4 grid-rows-5 gap-4 bg-gradient-to-b from-emerald-900 to-black rounded-lg text-black">
       <div className="flex flex-col items-center col-span-4 row-span-2">
         <div className="relative w-full flex justify-center">
           <Link

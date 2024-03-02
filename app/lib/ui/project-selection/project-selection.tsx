@@ -2,7 +2,7 @@
 import React, { MutableRefObject, useRef } from "react";
 import ProjectSelectionCard from "./project-selection-card";
 import Image from "next/image";
-import { PROJECTS } from "../shared/constants/constants";
+import { PROJECTS } from "../../../shared/constants/constants";
 
 export default function ProjectSelection() {
   let projectSelectionRef = useRef(null);

@@ -17,17 +17,35 @@ export const PROJECTS: TProjects[] = [
   {
     available: false,
     description: "Coming soon...",
+    id: 4,
+    link: "",
+    title: "3D Character Builder",
+  },
+  {
+    available: false,
+    description: "Coming soon...",
     id: 2,
     link: "",
-    title: "Org Structure Tool",
+    title: "Video Streaming",
   },
   {
     available: false,
     description: "Coming soon...",
     id: 3,
     link: "",
-    title: "Other Projects",
+    title: "Live Chat",
   },
 ];
 
 export const SALT_ROUNDS: number = 10;
+
+export const loginErrorStrings = {
+  default: "Something went wrong",
+  invalidEmail: "This username does not exist",
+  invalidPassword: "The password is incorrect",
+};
+
+export const createAccountErrorStrings = {
+  default: "Something went wrong",
+  invalidEmail: "Account with this email already exists.",
+};

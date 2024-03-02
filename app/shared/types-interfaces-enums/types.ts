@@ -1,4 +1,4 @@
-import { users, monsters } from "@/shared/database/schema";
+import { users, monsters } from "@/shared/database/sql/schema";
 
 export type TAuthContext = {
   isAuthenticated: boolean;
@@ -8,19 +8,23 @@ export type TAuthContext = {
 export type NewUser = typeof users.$inferInsert;
 export type NewMonster = typeof monsters.$inferInsert;
 
-export type TUserData = {
-  _id: number;
+export type TUser = {
+  createdAt: Date;
   email: string;
+  id: number;
   name: string;
   password: string;
-  settings: {
-    darkMode: boolean;
-  };
+  updatedAt: Date;
 };
 
 export type TAuthData = {
   email: string;
   password: string;
+};
+
+export type TLoginFormResponse = {
+  token?: string;
+  error?: string;
 };
 
 export type TBattleHistory = {

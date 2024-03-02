@@ -7,12 +7,13 @@ import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
 import React, { Fragment } from "react";
 import Link from "next/link";
-import { useAuthContext } from "../../hooks/useAuthContext";
-import { TAuthContext } from "../../types-interfaces-enums/types";
-import { NAVIGATION_MENU } from "../../constants/constants";
+import { NAVIGATION_MENU } from "../../../shared/constants/constants";
+import { useSession } from "next-auth/react";
+import { logout } from "@/app/actions/user-actions";
 
 export default function Navbar() {
-  const { isAuthenticated }: TAuthContext = useAuthContext();
+  const { data: sessionData } = useSession();
+  const isAuthenticated = sessionData?.user?.id;
   const pathname: string | null = usePathname();
   return (
     <Disclosure as="nav" className="bg-gray-300 dark:bg-gray-800">
@@ -92,7 +93,7 @@ export default function Navbar() {
                       leaveTo="transform opacity-0 scale-95"
                     >
                       <Menu.Items className="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white dark:bg-gray-500 py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
-                        <Menu.Item>
+                        {/* <Menu.Item>
                           {({ active }) => (
                             <Link
                               href="/profile"
@@ -104,7 +105,7 @@ export default function Navbar() {
                               Your Profile
                             </Link>
                           )}
-                        </Menu.Item>
+                        </Menu.Item> */}
                         <Menu.Item>
                           {({ active }) => (
                             <Link
@@ -120,45 +121,45 @@ export default function Navbar() {
                         </Menu.Item>
                         <Menu.Item>
                           {({ active }) => (
-                            <Link
-                              href="#"
+                            <button
+                              onClick={async () => logout()}
                               className={classNames(
                                 active ? "bg-gray-100 dark:bg-gray-600" : "",
-                                "block px-4 py-2 text-sm text-gray-800 dark:text-gray-300",
+                                "block px-4 py-2 w-full text-sm text-left text-gray-800 dark:text-gray-300",
                               )}
                             >
-                              Sign out
-                            </Link>
+                              Log out
+                            </button>
                           )}
                         </Menu.Item>
                       </Menu.Items>
                     </Transition>
                   </Menu>
                 ) : (
-                  <Link
-                    href={"/settings"}
-                    className={classNames(
-                      pathname === "/login"
-                        ? "bg-gray-400 text-black dark:bg-gray-900 dark:text-white"
-                        : "text-gray-800 hover:bg-gray-200 hover:text-black dark:text-gray-300 dark:hover:bg-gray-700 dark:hover:text-white",
-                      "rounded-md px-3 py-2 text-sm font-medium",
-                    )}
-                    aria-current={pathname === "/settings" ? "page" : undefined}
-                  >
-                    Settings
-                  </Link>
                   // <Link
-                  //   href={"/login"}
+                  //   href={"/settings"}
                   //   className={classNames(
                   //     pathname === "/login"
                   //       ? "bg-gray-400 text-black dark:bg-gray-900 dark:text-white"
                   //       : "text-gray-800 hover:bg-gray-200 hover:text-black dark:text-gray-300 dark:hover:bg-gray-700 dark:hover:text-white",
                   //     "rounded-md px-3 py-2 text-sm font-medium",
                   //   )}
-                  //   aria-current={pathname === "/login" ? "page" : undefined}
+                  //   aria-current={pathname === "/settings" ? "page" : undefined}
                   // >
-                  //   Login
+                  //   Settings
                   // </Link>
+                  <Link
+                    href={"/login"}
+                    className={classNames(
+                      pathname === "/login"
+                        ? "bg-gray-400 text-black dark:bg-gray-900 dark:text-white"
+                        : "text-gray-800 hover:bg-gray-200 hover:text-black dark:text-gray-300 dark:hover:bg-gray-700 dark:hover:text-white",
+                      "rounded-md px-3 py-2 text-sm font-medium",
+                    )}
+                    aria-current={pathname === "/login" ? "page" : undefined}
+                  >
+                    Login
+                  </Link>
                 )}
               </div>
             </div>

@@ -1,8 +1,8 @@
-import monsterList from "@/app/projects/monster-battle/monster-list";
+import monsterList from "@/shared/database/sql/_mocks/monster-list";
 import { SALT_ROUNDS } from "@/shared/constants/constants";
-import { insertMonsters, insertUser } from "@/shared/database/db";
+import { insertMonsters, insertUser } from "@/shared/database/sql/db";
 import { NewUser } from "@/shared/types-interfaces-enums/types";
-import { encryptPassword } from "@/shared/utility/user-utils";
+import { encryptPassword } from "@/shared/utility/bcrypt-utils";
 
 async function main() {
   const newSeedUser: NewUser = {
