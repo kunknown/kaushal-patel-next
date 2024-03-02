@@ -1,6 +1,5 @@
 "use server";
 import { signIn, signOut } from "@/auth";
-import { NewUser } from "../shared/types-interfaces-enums/types";
 import {
   SALT_ROUNDS,
   createAccountErrorStrings,
@@ -9,6 +8,7 @@ import {
 import { getUser, insertUser } from "@/shared/database/sql/db";
 import { encryptPassword } from "@/shared/utility/bcrypt-utils";
 import { AuthError } from "next-auth";
+import { DrizzleError } from "drizzle-orm";
 
 export async function logout() {
   await signOut();
@@ -69,7 +69,8 @@ export async function createNewUser(formData: FormData) {
       password: passwordHash,
     });
   } catch (error) {
-    if ((error?.message).includes("user_email_idx")) {
+    console.log(error instanceof DrizzleError, error instanceof Error);
+    if (error instanceof Error && error?.message.includes("user_email_idx")) {
       return createAccountErrorStrings.invalidEmail;
     }
     throw error;
