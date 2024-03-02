@@ -3,7 +3,7 @@
 import React from "react";
 import Image from "next/image";
 import classNames from "classnames";
-import KushIcon from '@/public/kush_2024_cartoon-icon.png'
+import KushIcon from "@/public/kush_2024_cartoon-icon.png";
 
 export default function Footer() {
   return (
