@@ -1,14 +1,12 @@
-"use client";
+import React from "react";
+import MonsterArena from "../../lib/ui/monster-battle/monster-arena";
+import { getMonsters } from "@/shared/database/sql/db";
 
-import React, { useState } from "react";
-import MonsterArena from "./monster-arena";
-import Image from "next/image";
-import LoadingIcon from "@/public/icons8-sand-timer_transparent.gif";
-
-export default function MonsterBattle() {
+export default async function MonsterBattle() {
+  const monsterList = await getMonsters();
   return (
     <div className="mt-16 flex justify-center">
-      <MonsterArena />
+      <MonsterArena monsterList={monsterList} />
     </div>
   );
 }
