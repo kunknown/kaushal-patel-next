@@ -4,7 +4,7 @@ export default function Home() {
   return (
     <div
       id="home-page-container"
-      className="mx-auto my-16 w-full h-screen container flex flex-col items-center overflow-y-auto overscroll-auto scrollbar-none"
+      className="mx-auto w-full h-screen container flex flex-col items-center overflow-y-auto overscroll-auto scrollbar-none"
     >
       <div
         className="w-full min-h-screen bg-fixed bg-center bg-cover bg-no-repeat"
