@@ -60,7 +60,7 @@ export default function MonsterArena({
     <Card>
       <CardHeader>
         <div className="grid grid-cols-6 w-full flex justify-center">
-          <div className="col-span-1">
+          <div className="col-span-2 md:col-span-1">
             <Button
               href="/projects"
               as={Link}

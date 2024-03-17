@@ -35,7 +35,7 @@ export default function RootLayout({ children }: Readonly<PropsWithChildren>) {
         >
           <NextUiProvider>
             <Navbar />
-            {children}
+            <div className="my-16">{children}</div>
             <Footer />
           </NextUiProvider>
         </body>
