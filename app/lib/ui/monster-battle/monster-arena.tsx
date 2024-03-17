@@ -1,4 +1,4 @@
-("use client");
+"use client";
 
 import { TBattleRecord, TMonster } from "@/shared/types-interfaces-enums/types";
 import { useEffect, useState } from "react";
