@@ -15,6 +15,13 @@ export const PROJECTS: TProjects[] = [
     title: "Monster Batle",
   },
   {
+    available: true,
+    description: "Live chat with another user.",
+    id: 2,
+    link: "projects/live-chat",
+    title: "Live Chat",
+  },
+  {
     available: false,
     description: "Coming soon...",
     id: 4,
@@ -24,16 +31,9 @@ export const PROJECTS: TProjects[] = [
   {
     available: false,
     description: "Coming soon...",
-    id: 2,
-    link: "",
-    title: "Video Streaming",
-  },
-  {
-    available: false,
-    description: "Coming soon...",
     id: 3,
     link: "",
-    title: "Live Chat",
+    title: "Video Streaming",
   },
 ];
 
