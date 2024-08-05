@@ -3,7 +3,7 @@
 import React, { useState, FormEvent } from "react";
 import { submitLoginData } from "../actions/user-actions";
 import { Button, Input, Link } from "@nextui-org/react";
-import { loginErrorStrings } from "@/shared/constants/constants";
+import { loginErrorStrings } from "@/lib/constants/constants";
 
 export default function Page() {
   const [isLoading, setIsLoading] = useState<boolean>(false);

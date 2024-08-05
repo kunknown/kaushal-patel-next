@@ -15,8 +15,8 @@ type TDATA = {
 };
 type TSearchParams = {
   address: string;
-  buildYearMin: string;
-  buildYearMax: string;
+  buildYearMin: number;
+  buildYearMax: number;
   city: string;
   owner: string;
   priceMin: number;

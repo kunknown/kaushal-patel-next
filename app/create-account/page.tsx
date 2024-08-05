@@ -3,7 +3,7 @@
 import React, { FormEvent, useState } from "react";
 import { createNewUser } from "@/app/actions/user-actions";
 import { Button, Input } from "@nextui-org/react";
-import { createAccountErrorStrings } from "@/shared/constants/constants";
+import { createAccountErrorStrings } from "@/lib/constants/constants";
 
 export default function Page() {
   const [isLoading, setIsLoading] = useState<boolean>(false);

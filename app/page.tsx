@@ -1,55 +1,117 @@
-import React from "react";
+"use client";
+import react, { useRef } from "react";
+import {
+  useScroll,
+  motion,
+  useTransform,
+  useSpring,
+  useMotionValue,
+  useAnimationFrame,
+} from "framer-motion";
+import { Image } from "@nextui-org/react";
+import { useParallax } from "@/lib/hooks/useParallax";
+import {
+  THomeSlice,
+  TTechStackIcons,
+} from "@/lib/types-interfaces-enums/types";
+import { TECH_STACK_ICONS } from "@/lib/constants/constants";
+import ParallaxIcon from "@/lib/ui/home/ParallaxIcon";
+import ParallaxImage from "@/lib/ui/home/ParallaxImage";
 
+const HOME_SLICES: Array<THomeSlice> = [
+  {
+    element: (
+      <section>
+        <ParallaxIcon baseVelocity={10} icons={TECH_STACK_ICONS} />
+      </section>
+    ),
+    text: "The stack",
+    key: "stack",
+  },
+  {
+    element: (
+      <Image
+        src="/mage.png"
+        alt="A mage standing in front of a portal"
+        className=""
+        height={"100%"}
+        width={"100%"}
+      />
+    ),
+    text: "Welcome to the Monster World!",
+    key: "welcome-mage",
+  },
+  {
+    element: (
+      <div className="flex">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.1, translate: "-50% 50%" }}
+          whileInView={{ opacity: 1, scale: 1, translate: 0 }}
+          transition={{ duration: 0.5 }}
+        >
+          <Image src="/dragon.png" alt="dragon" />
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, scale: 0 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.5, delay: 0.5 }}
+        >
+          <Image src="/swords.gif" alt="dragon" width={200} />
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, scale: 0.1, translate: "50% -50%" }}
+          whileInView={{ opacity: 1, scale: 1, translate: 0 }}
+          transition={{ duration: 0.5 }}
+        >
+          <Image src="/hunter.png" alt="hunter" width={200} />
+        </motion.div>
+      </div>
+    ),
+    text: "You have been summoned to defeat a fierce monster threatening this world...",
+    key: "dragon-vs-human",
+  },
+  {
+    element: (
+      <a href="/projects/monster-battle">
+        <Image
+          src="/monster-world.png"
+          alt="A monster world"
+          className="hover:animate-spin-slow"
+          height={"100%"}
+          width={"100%"}
+        />
+      </a>
+    ),
+    text: "Click the World to Enter!",
+    key: "enter-the-world",
+  },
+];
 export default function Home() {
+  const containerRef = useRef(null);
+  const { scrollYProgress } = useScroll({ container: containerRef });
+  const scaleX = useSpring(scrollYProgress, {
+    damping: 30,
+    restDelta: 0.001,
+    stiffness: 100,
+  });
+
   return (
     <div
-      id="home-page-container"
-      className="mx-auto w-full h-screen container flex flex-col items-center overflow-y-auto overscroll-auto scrollbar-none"
+      ref={containerRef}
+      className="h-screen overflow-hidden overflow-y-auto overscroll-auto scrollbar-none snap-y snap-mandatory"
     >
-      <div
-        className="w-full min-h-screen bg-fixed bg-center bg-cover bg-no-repeat"
-        style={{
-          backgroundImage: `url(/bulb-earth_1920.jpg)`,
-          opacity: "65%",
-        }}
-      >
-        <div className="h-full flex items-center justify-center text-6xl md:text-9xl text-white">
-          Welcome!
-        </div>
-      </div>
-      <div className="px-2 md:px-4 py-12 md:py-16 text-xl md:text-4xl text-center">
-        I am an entrepreneurial-minded, senior full-stack software engineer with
-        a strong drive for efficient problem-solving, a passion for writing
-        clean and efficient code, and a desire for continuous learning and
-        innovation.
-      </div>
-      <div
-        className="w-full min-h-[300px] bg-fixed bg-center be-cover bg-no-repeat"
-        style={{ backgroundImage: `url(/futuristic_1920.jpg)`, opacity: "65%" }}
-      ></div>
-      <div className="px-2 md:px-4 py-12 md:py-16 text-xl md:text-4xl text-center">
-        My proficiency lies in JavaScript and its frameworks. Specifically,
-        React, Next, and Node. I also have a strong interest in Python and its
-        frameworks.
-      </div>
-      <div
-        className="w-full min-h-[300px] bg-fixed bg-center be-cover bg-no-repeat"
-        style={{
-          backgroundImage: `url(/kush_2024_cartoon.png)`,
-          opacity: "65%",
-        }}
-      ></div>
-      <div className="px-2 md:px-4 py-12 md:py-16 text-xl md:text-4xl text-center">
-        This website is my personal project in works. I will be updating and
-        improving it over time with new features and mini-projects.
-      </div>
-      <div
-        className="w-full min-h-[500px] text-9xl bg-fixed bg-center bg-cover bg-no-repeat"
-        style={{
-          backgroundImage: `url(/bulb-earth_1920.jpg)`,
-          opacity: "65%",
-        }}
-      ></div>
+      {HOME_SLICES.map(({ element, text, key }) => (
+        <ParallaxImage
+          key={key}
+          element={element}
+          text={text}
+          scrollYProgress={scrollYProgress}
+        />
+      ))}
+      <motion.div
+        className="fixed left-0 right-0 h-[5px] bg-white top-16"
+        style={{ scaleX }}
+      />
     </div>
   );
 }

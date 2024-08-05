@@ -1,4 +1,5 @@
-import { users, monsters } from "@/shared/database/sql/schema";
+import { users, monsters } from "@/lib/database/sql/schema";
+import type { RefObject } from "react";
 
 export type TAuthContext = {
   isAuthenticated: boolean;
@@ -63,4 +64,16 @@ export type TProjects = {
   id: number;
   link: string;
   title: string;
+};
+
+export type THomeSlice = {
+  element: JSX.Element;
+  text: string;
+  key: string;
+};
+
+export type TTechStackIcons = {
+  src: string;
+  alt: string;
+  text: string;
 };

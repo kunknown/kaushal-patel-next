@@ -1,8 +1,8 @@
-import monsterList from "@/shared/database/sql/_mocks/monster-list";
-import { SALT_ROUNDS } from "@/shared/constants/constants";
-import { insertMonsters, insertUser } from "@/shared/database/sql/db";
-import { NewUser } from "@/shared/types-interfaces-enums/types";
-import { encryptPassword } from "@/shared/utility/bcrypt-utils";
+import monsterList from "@/lib/database/sql/_mocks/monster-list";
+import { SALT_ROUNDS } from "@/lib/constants/constants";
+import { insertMonsters, insertUser } from "@/lib/database/sql/db";
+import { NewUser } from "@/app/lib/types-interfaces-enums/types";
+import { encryptPassword } from "@/lib/utility/bcrypt-utils";
 
 async function main() {
   const newSeedUser: NewUser = {

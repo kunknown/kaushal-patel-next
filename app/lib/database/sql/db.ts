@@ -1,8 +1,8 @@
-import "@/shared/database/sql/config";
+import "@/lib/database/sql/config";
 import { drizzle } from "drizzle-orm/vercel-postgres";
 import { sql } from "@vercel/postgres";
-import { users, monsters } from "@/shared/database/sql/schema";
-import { NewMonster, NewUser } from "@/shared/types-interfaces-enums/types";
+import { users, monsters } from "@/lib/database/sql/schema";
+import { NewMonster, NewUser } from "@/app/lib/types-interfaces-enums/types";
 import { eq } from "drizzle-orm";
 
 // pass along all schemas

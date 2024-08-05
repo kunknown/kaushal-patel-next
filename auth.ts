@@ -1,9 +1,9 @@
 import Credentials from "next-auth/providers/credentials";
 import NextAuth from "next-auth";
 import type { NextAuthConfig } from "next-auth";
-import { getUser } from "@/shared/database/sql/db";
-import { TUser } from "@/shared/types-interfaces-enums/types";
-import { comparePassword } from "@/shared/utility/bcrypt-utils";
+import { getUser } from "@/lib/database/sql/db";
+import { TUser } from "@/app/lib/types-interfaces-enums/types";
+import { comparePassword } from "@/lib/utility/bcrypt-utils";
 
 export const config: NextAuthConfig = {
   // adapter: {

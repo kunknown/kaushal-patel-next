@@ -1,4 +1,4 @@
-import "@/shared/database/sql/config";
+import "@/lib/database/sql/config";
 import { defineConfig } from "drizzle-kit";
 
 const { POSTGRES_URL } = process.env;

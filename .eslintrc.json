@@ -1,14 +1,6 @@
 {
   "extends": ["next/core-web-vitals", "plugin:prettier/recommended"],
-  "plugins": ["prettier"],
   "rules": {
-    "prettier/prettier":  ["error", { "endOfLine": "auto" }],
-    "sort-keys": [
-      "error",
-      "asc",
-      {
-        "natural": true
-      }
-    ]
+    "prettier/prettier":  ["error", { "endOfLine": "auto" }]
   }
 }

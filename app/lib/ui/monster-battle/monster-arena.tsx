@@ -1,13 +1,16 @@
 "use client";
 
-import { TBattleRecord, TMonster } from "@/shared/types-interfaces-enums/types";
+import {
+  TBattleRecord,
+  TMonster,
+} from "@/app/lib/types-interfaces-enums/types";
 import { useEffect, useState } from "react";
 import MonsterCard from "./monster-card";
 import MonsterBattleHistory from "./monster-battle-history";
 import {
   MONSTER_ARENA_STEPS,
   MONSTER_ARENA_VIEWS,
-} from "@/shared/types-interfaces-enums/enums";
+} from "@/app/lib/types-interfaces-enums/enums";
 import MonsterArenaButton from "./monster-arena-button";
 import {
   BreadcrumbItem,

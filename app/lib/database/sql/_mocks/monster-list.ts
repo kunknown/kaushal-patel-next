@@ -1,4 +1,4 @@
-import { TMonster } from "@/app/shared/types-interfaces-enums/types";
+import { TMonster } from "@/app/lib/types-interfaces-enums/types";
 
 const monsterList: TMonster[] = [
   {

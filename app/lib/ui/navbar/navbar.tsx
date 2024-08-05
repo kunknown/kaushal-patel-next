@@ -5,16 +5,19 @@ import Image from "next/image";
 import classNames from "classnames";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
-import React, { Fragment } from "react";
+import React, { Fragment, useContext } from "react";
 import Link from "next/link";
-import { NAVIGATION_MENU } from "../../../shared/constants/constants";
+import { NAVIGATION_MENU } from "@/lib/constants/constants";
 import { useSession } from "next-auth/react";
 import { logout } from "@/app/actions/user-actions";
+import SwitchToggle from "@/app/lib/ui/switch-toggle/switch-toggle";
+import { DarkThemeContext } from "@/lib/context/dark-theme-context";
 
 export default function Navbar() {
   const { data: sessionData } = useSession();
   const isAuthenticated = sessionData?.user?.id;
   const pathname: string | null = usePathname();
+  const { isDarkTheme, setIsDarkTheme } = useContext(DarkThemeContext);
   return (
     <Disclosure as="nav" className="bg-gray-300 dark:bg-gray-800">
       {({ open }) => (
@@ -69,6 +72,14 @@ export default function Navbar() {
                 </button> */}
 
                 {/* Profile dropdown */}
+                <div className="px-4">
+                  <SwitchToggle
+                    isToggleOn={isDarkTheme}
+                    setIsToggleOn={() => setIsDarkTheme(!isDarkTheme)}
+                    labelTop={"Dark Theme"}
+                    showDarkModeIcon={true}
+                  />
+                </div>
                 {isAuthenticated ? (
                   <Menu as="div" className="relative ml-3">
                     <div>

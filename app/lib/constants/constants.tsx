@@ -1,4 +1,8 @@
-import { TNavigationMenu, TProjects } from "../types-interfaces-enums/types";
+import {
+  TNavigationMenu,
+  TProjects,
+  TTechStackIcons,
+} from "../types-interfaces-enums/types";
 
 export const NAVIGATION_MENU: TNavigationMenu[] = [
   { href: "/", name: "Home" },
@@ -49,3 +53,41 @@ export const createAccountErrorStrings = {
   default: "Something went wrong",
   invalidEmail: "Account with this email already exists.",
 };
+
+export const TECH_STACK_ICONS: Array<TTechStackIcons> = [
+  {
+    src: "/next.svg",
+    alt: "next.js logo",
+    text: "Next.js",
+  },
+  {
+    src: "/vercel.svg",
+    alt: "vercel logo",
+    text: "Vercel",
+  },
+  {
+    src: "/typescript.svg",
+    alt: "typescript logo",
+    text: "TypeScript",
+  },
+  {
+    src: "/react.svg",
+    alt: "react logo",
+    text: "React",
+  },
+  {
+    src: "/tailwindcss.svg",
+    alt: "tailwindcss logo",
+    text: "Tailwindcss",
+  },
+  {
+    src: "/postgresql.svg",
+    alt: "postgresql logo",
+    text: "PostgreSQL",
+  },
+  {
+    src: "/framermotion.svg",
+    alt: "framermotion logo",
+    text: "FramerMotion",
+  }, //jest, storybook, node.js, websocket, three.js, dashboard (lib), Auth0, AI integration
+];
