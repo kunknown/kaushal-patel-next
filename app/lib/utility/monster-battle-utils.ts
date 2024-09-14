@@ -1,23 +1,10 @@
-"use server";
-
 import {
   TBattleHistory,
   TBattleRecord,
   TMonster,
-} from "@/app/lib/types-interfaces-enums/types";
+} from "@/lib/types-interfaces-enums/types";
 
-export async function getMonsterBattleWinner(
-  monsterA: TMonster,
-  monsterB: TMonster,
-): Promise<TBattleRecord> {
-  const { firstTurnMonster, secondTurnMonster } = getFirstTurnMonster(
-    monsterA,
-    monsterB,
-  );
-  return battle(firstTurnMonster, secondTurnMonster);
-}
-
-function getFirstTurnMonster(
+export function getFirstTurnMonster(
   monsterA: TMonster,
   monsterB: TMonster,
 ): {
@@ -37,7 +24,10 @@ function getFirstTurnMonster(
   return { firstTurnMonster, secondTurnMonster };
 }
 
-function battle(atkMonster: TMonster, defMonster: TMonster): TBattleRecord {
+export function battle(
+  atkMonster: TMonster,
+  defMonster: TMonster,
+): TBattleRecord {
   let attackMonster = atkMonster;
   let defenseMonster = defMonster;
   let turn = 1;
@@ -67,7 +57,7 @@ function battle(atkMonster: TMonster, defMonster: TMonster): TBattleRecord {
   return { battleHistory, monsterA: atkMonster, monsterB: defMonster, winner };
 }
 
-function battleRoundCalculation(
+export function battleRoundCalculation(
   atkMonster: TMonster,
   defMonster: TMonster,
 ): {

@@ -1,5 +1,5 @@
 import { users, monsters } from "@/lib/database/sql/schema";
-import type { RefObject } from "react";
+import { StaticImageData } from "next/image";
 
 export type TAuthContext = {
   isAuthenticated: boolean;
@@ -76,4 +76,12 @@ export type TTechStackIcons = {
   src: string;
   alt: string;
   text: string;
+};
+
+export type TCard = {
+  id: number;
+  image: StaticImageData;
+  isFlipped: boolean;
+  isMatched: boolean;
+  alt: string;
 };

@@ -8,7 +8,7 @@ export default function ParallaxImage({
   text,
   scrollYProgress,
 }: THomeSlice & { scrollYProgress: MotionValue<number> }) {
-  const y = useParallax(scrollYProgress, 300);
+  const y = useParallax(scrollYProgress, 200);
   return (
     <section
       className="h-full flex justify-center items-center relative snap-center"
@@ -22,7 +22,7 @@ export default function ParallaxImage({
         initial={{ opacity: 0, translateX: "-100%" }}
         whileInView={{ opacity: 1, translateX: 0 }}
         transition={{ duration: 0.5, type: "just" }}
-        className="text-black dark:text-white text-2xl uppercase"
+        className="text-black dark:text-white text-2xl uppercase text-center font-bold"
       >
         {text}
       </motion.h2>

@@ -29,10 +29,7 @@ export default function RootLayout({ children }: Readonly<PropsWithChildren>) {
     <DarkThemeContextProvider>
       <SessionProvider>
         <body
-          className={classNames(
-            "font-sans bg-gray dark:bg-gray-600",
-            inter.className,
-          )}
+          className={classNames("bg-gray dark:bg-gray-600", inter.className)}
         >
           <NextUiProvider>
             <Navbar />

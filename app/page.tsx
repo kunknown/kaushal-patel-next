@@ -1,32 +1,30 @@
 "use client";
-import react, { useRef } from "react";
-import {
-  useScroll,
-  motion,
-  useTransform,
-  useSpring,
-  useMotionValue,
-  useAnimationFrame,
-} from "framer-motion";
+import { useRef } from "react";
+import { useScroll, motion, useSpring } from "framer-motion";
 import { Image } from "@nextui-org/react";
-import { useParallax } from "@/lib/hooks/useParallax";
-import {
-  THomeSlice,
-  TTechStackIcons,
-} from "@/lib/types-interfaces-enums/types";
+import { THomeSlice } from "@/lib/types-interfaces-enums/types";
 import { TECH_STACK_ICONS } from "@/lib/constants/constants";
 import ParallaxIcon from "@/lib/ui/home/ParallaxIcon";
 import ParallaxImage from "@/lib/ui/home/ParallaxImage";
+import { StackChips } from "@/lib/ui/home/StackChips";
 
 const HOME_SLICES: Array<THomeSlice> = [
   {
     element: (
       <section>
-        <ParallaxIcon baseVelocity={10} icons={TECH_STACK_ICONS} />
+        <StackChips icons={TECH_STACK_ICONS} />
+        <ParallaxIcon
+          baseVelocity={5}
+          icons={[
+            ...TECH_STACK_ICONS,
+            ...TECH_STACK_ICONS,
+            ...TECH_STACK_ICONS,
+          ]}
+        />
       </section>
     ),
-    text: "The stack",
-    key: "stack",
+    text: "The Tech stack",
+    key: "tech-stack",
   },
   {
     element: (
@@ -38,8 +36,8 @@ const HOME_SLICES: Array<THomeSlice> = [
         width={"100%"}
       />
     ),
-    text: "Welcome to the Monster World!",
-    key: "welcome-mage",
+    text: "The Experience",
+    key: "experience",
   },
   {
     element: (
@@ -67,8 +65,8 @@ const HOME_SLICES: Array<THomeSlice> = [
         </motion.div>
       </div>
     ),
-    text: "You have been summoned to defeat a fierce monster threatening this world...",
-    key: "dragon-vs-human",
+    text: "The Passion",
+    key: "passion",
   },
   {
     element: (
@@ -82,8 +80,8 @@ const HOME_SLICES: Array<THomeSlice> = [
         />
       </a>
     ),
-    text: "Click the World to Enter!",
-    key: "enter-the-world",
+    text: "Explore The Projects",
+    key: "projects",
   },
 ];
 export default function Home() {
@@ -98,7 +96,7 @@ export default function Home() {
   return (
     <div
       ref={containerRef}
-      className="h-screen overflow-hidden overflow-y-auto overscroll-auto scrollbar-none snap-y snap-mandatory"
+      className="h-screen overflow-hidden overflow-y-auto overscroll-auto scrollbar-none snap-y snap-mandatory "
     >
       {HOME_SLICES.map(({ element, text, key }) => (
         <ParallaxImage

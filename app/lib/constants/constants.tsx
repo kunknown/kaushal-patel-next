@@ -1,4 +1,5 @@
 import {
+  TCard,
   TNavigationMenu,
   TProjects,
   TTechStackIcons,
@@ -10,6 +11,14 @@ export const NAVIGATION_MENU: TNavigationMenu[] = [
 ];
 
 export const PROJECTS: TProjects[] = [
+  {
+    available: true,
+    description:
+      "Match all the pairs to win this 4x4 card game! Pick 2 cards at a time, if they're a match it'll stay face-up otherwise they'll go face-down.",
+    id: 5,
+    link: "projects/memory-card-game",
+    title: "Memory Card Game",
+  },
   {
     available: true,
     description:

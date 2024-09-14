@@ -181,12 +181,11 @@ export default function MonsterArena({
             <MonsterArenaButton
               isDisabled={!monsterA || !monsterB}
               onClickHandler={async () => {
-                setBattleRecord(
-                  await getMonsterBattleWinner(
-                    monsterA as TMonster,
-                    monsterB as TMonster,
-                  ),
+                const result = await fetch(
+                  `/api/monster-battle?monsterAId=${monsterA?.id}&monsterBId=${monsterB?.id}`,
                 );
+                const data: TBattleRecord = await result.json();
+                setBattleRecord(data);
               }}
               label="Start Battle"
               isAnimated={isBattleStep}

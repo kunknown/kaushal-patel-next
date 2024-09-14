@@ -3,7 +3,7 @@ import { drizzle } from "drizzle-orm/vercel-postgres";
 import { sql } from "@vercel/postgres";
 import { users, monsters } from "@/lib/database/sql/schema";
 import { NewMonster, NewUser } from "@/app/lib/types-interfaces-enums/types";
-import { eq } from "drizzle-orm";
+import { eq, or } from "drizzle-orm";
 
 // pass along all schemas
 export const db = drizzle(sql, { schema: { monsters, users } });
@@ -23,7 +23,14 @@ export const insertUsers = async (userArr: NewUser[]) => {
   return db.insert(users).values(userArr).returning();
 };
 
-export const getMonsters = async () => {
+export const getMonsters = async (monsterIds: string[]) => {
+  const conditions = monsterIds.map((id) => eq(monsters.id, Number(id)));
+  const combinedConditions =
+    conditions.length > 1 ? or(...conditions) : conditions[0];
+  return db.select().from(monsters).where(combinedConditions);
+};
+
+export const getAllMonsters = async () => {
   return await db.select().from(monsters);
 };
 
