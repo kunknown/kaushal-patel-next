@@ -7,6 +7,7 @@ import {
 
 export const NAVIGATION_MENU: TNavigationMenu[] = [
   { href: "/", name: "Home" },
+  { href: "/about", name: "About" },
   { href: "/projects", name: "Projects" },
 ];
 
@@ -99,4 +100,71 @@ export const TECH_STACK_ICONS: Array<TTechStackIcons> = [
     alt: "framermotion logo",
     text: "FramerMotion",
   }, //jest, storybook, node.js, websocket, three.js, dashboard (lib), Auth0, AI integration
+];
+export const ABOUT_TECH_STACK_ICONS: Array<TTechStackIcons> = [
+  {
+    src: "/next.svg",
+    alt: "next.js logo",
+    text: "Next.js",
+  },
+  {
+    src: "/vercel.svg",
+    alt: "vercel logo",
+    text: "Vercel",
+  },
+  {
+    src: "/typescript.svg",
+    alt: "typescript logo",
+    text: "TypeScript",
+  },
+  {
+    src: "/react.svg",
+    alt: "react logo",
+    text: "React",
+  },
+  {
+    src: "/tailwindcss.svg",
+    alt: "tailwindcss logo",
+    text: "Tailwindcss",
+  },
+  {
+    src: "/postgresql.svg",
+    alt: "postgresql logo",
+    text: "PostgreSQL",
+  },
+  {
+    src: "/framermotion.svg",
+    alt: "framermotion logo",
+    text: "FramerMotion",
+  }, //websocket, three.js, dashboard (lib), Auth0, AI integration
+  {
+    src: "/nodejs.svg",
+    alt: "nodejs logo",
+    text: "Node.js",
+  },
+  {
+    src: "/jest.svg",
+    alt: "jestjs logo",
+    text: "Jest",
+  },
+  {
+    src: "/react-testing-library.svg",
+    alt: "react testing library logo",
+    text: "React Testing Library",
+  },
+  {
+    src: "/storybook.svg",
+    alt: "storybook logo",
+    text: "Storybook",
+  },
+  {
+    src: "/aws.svg",
+    alt: "aws logo",
+    text: "AWS",
+  },
+  {
+    src: "/supabase.svg",
+    alt: "supabase logo",
+    text: "Supabase",
+  },
 ];

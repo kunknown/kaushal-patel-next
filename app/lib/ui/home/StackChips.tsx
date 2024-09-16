@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export function StackChips({ icons }: { icons: Array<TTechStackIcons> }) {
   return (
-    <div className="flex gap-4 w-full flex-wrap">
+    <div className="flex gap-2 md:gap-4 flex-wrap justify-center">
       {icons.map((icon) => (
         <Chip
           key={icon.text}

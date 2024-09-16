@@ -32,7 +32,7 @@ export default function ParallaxIcon({
     baseX.set(newPosition);
   });
   return (
-    <div className="my-4 overflow-hidden whitespace-nowrap flex flex-nowrap">
+    <div className="my-4 overflow-x-hidden whitespace-nowrap flex flex-nowrap">
       <motion.div className="flex align-center" style={{ x }}>
         {icons.map(({ src, alt }, index) => (
           <span key={index} className="flex justify-center mr-4">

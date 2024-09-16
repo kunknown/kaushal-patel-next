@@ -11,18 +11,28 @@ export default function ParallaxImage({
   const y = useParallax(scrollYProgress, 200);
   return (
     <section
-      className="h-full flex justify-center items-center relative snap-center"
+      className="h-screen flex flex-col md:flex-row justify-center items-center relative snap-center"
       style={{ perspective: "500px" }}
     >
-      <div className="max-w-[70vw] max-h-[90vh] m-[20px] overflow-hidden">
+      <motion.h2
+        initial={{ opacity: 0, translateY: "100%" }}
+        whileInView={{ opacity: 1, translateY: 0 }}
+        transition={{ duration: 0.5, type: "just" }}
+        viewport={{once: true}}
+        className="block md:hidden pb-4 text-black dark:text-white text-2xl uppercase text-center font-bold"
+      >
+        {text}
+      </motion.h2>
+      <motion.div className="w-screen overflow-hidden" initial={{opacity: 0}} whileInView={{opacity: 1}} transition={{duration: 0.5}} viewport={{once: true}}>
         {element}
-      </div>
+      </motion.div>
       <motion.h2
         style={{ y }}
         initial={{ opacity: 0, translateX: "-100%" }}
         whileInView={{ opacity: 1, translateX: 0 }}
         transition={{ duration: 0.5, type: "just" }}
-        className="text-black dark:text-white text-2xl uppercase text-center font-bold"
+        viewport={{once: true}}
+        className="hidden md:block min-w-[250px] max-w-[250px] text-black dark:text-white text-2xl uppercase text-center font-bold"
       >
         {text}
       </motion.h2>

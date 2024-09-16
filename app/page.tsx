@@ -1,7 +1,6 @@
 "use client";
 import { useRef } from "react";
 import { useScroll, motion, useSpring } from "framer-motion";
-import { Image } from "@nextui-org/react";
 import { THomeSlice } from "@/lib/types-interfaces-enums/types";
 import { TECH_STACK_ICONS } from "@/lib/constants/constants";
 import ParallaxIcon from "@/lib/ui/home/ParallaxIcon";
@@ -11,7 +10,7 @@ import { StackChips } from "@/lib/ui/home/StackChips";
 const HOME_SLICES: Array<THomeSlice> = [
   {
     element: (
-      <section>
+      <>
         <StackChips icons={TECH_STACK_ICONS} />
         <ParallaxIcon
           baseVelocity={5}
@@ -21,66 +20,46 @@ const HOME_SLICES: Array<THomeSlice> = [
             ...TECH_STACK_ICONS,
           ]}
         />
-      </section>
+      </>
     ),
-    text: "The Tech stack",
-    key: "tech-stack",
+    text: "The Portfolio Tech stack",
+    key: "portfolio-tech-stack",
   },
   {
     element: (
-      <Image
-        src="/mage.png"
-        alt="A mage standing in front of a portal"
-        className=""
-        height={"100%"}
-        width={"100%"}
-      />
+      <h2 className="p-2 bg-gradient-to-r from-gray-300 via-gray-200 to-gray-300 dark:from-gray-800 dark:via-gray-700 dark:to-gray-800 rounded-lg text-2xl uppercase text-center">
+      An entrepreneurial-minded, senior full-stack software engineer with a strong drive for efficient problem-solving, a passion for clean and
+      efficient code, and a desire for continuous learning and innovation.
+      </h2>
     ),
-    text: "The Experience",
-    key: "experience",
+    text: "The Person",
+    key: "person",
   },
   {
     element: (
-      <div className="flex">
-        <motion.div
-          initial={{ opacity: 0, scale: 0.1, translate: "-50% 50%" }}
-          whileInView={{ opacity: 1, scale: 1, translate: 0 }}
-          transition={{ duration: 0.5 }}
-        >
-          <Image src="/dragon.png" alt="dragon" />
-        </motion.div>
-        <motion.div
-          initial={{ opacity: 0, scale: 0 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.5, delay: 0.5 }}
-        >
-          <Image src="/swords.gif" alt="dragon" width={200} />
-        </motion.div>
-        <motion.div
-          initial={{ opacity: 0, scale: 0.1, translate: "50% -50%" }}
-          whileInView={{ opacity: 1, scale: 1, translate: 0 }}
-          transition={{ duration: 0.5 }}
-        >
-          <Image src="/hunter.png" alt="hunter" width={200} />
-        </motion.div>
-      </div>
+      <>
+        <div className="text-black dark:text-white text-center text-xl font-bold">HOVER & CLICK!</div>
+        <a href="/projects" className="flex place-content-center">
+          <motion.div
+            className="h-[300px] w-[300px] bg-black dark:bg-white rounded-2xl"
+            whileHover={{
+              scale: [0.75, 0.25, 0.75, 0.25, 0.75],
+              rotate: [0, 0, 360, 360, 0],
+              borderRadius: ["20%", "20%", "50%", "50%", "20%"],
+              backgroundColor: "green",
+            }}
+            transition={{
+              duration: 2,
+              ease: "easeInOut",
+              times: [0, 0.2, 0.5, 0.8, 1],
+              repeat: Infinity,
+              repeatDelay: 1
+            }}
+          />
+        </a>
+      </>
     ),
-    text: "The Passion",
-    key: "passion",
-  },
-  {
-    element: (
-      <a href="/projects/monster-battle">
-        <Image
-          src="/monster-world.png"
-          alt="A monster world"
-          className="hover:animate-spin-slow"
-          height={"100%"}
-          width={"100%"}
-        />
-      </a>
-    ),
-    text: "Explore The Projects",
+    text: "The Projects",
     key: "projects",
   },
 ];
@@ -88,15 +67,15 @@ export default function Home() {
   const containerRef = useRef(null);
   const { scrollYProgress } = useScroll({ container: containerRef });
   const scaleX = useSpring(scrollYProgress, {
-    damping: 30,
+    damping: 15,
     restDelta: 0.001,
-    stiffness: 100,
+    stiffness: 75,
   });
 
   return (
     <div
       ref={containerRef}
-      className="h-screen overflow-hidden overflow-y-auto overscroll-auto scrollbar-none snap-y snap-mandatory "
+      className="h-screen m-4 max-w-[1000px] overflow-hidden overflow-y-auto overscroll-auto scrollbar-none snap-y snap-mandatory "
     >
       {HOME_SLICES.map(({ element, text, key }) => (
         <ParallaxImage
