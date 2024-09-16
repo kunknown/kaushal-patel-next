@@ -10,7 +10,7 @@
     "drizzle:seed": "npx tsx app/shared/database/sql/scripts/seed.ts",
     "drizzle:push": "npx drizzle-kit push:pg",
     "lint": "next lint",
-    "lint:fix": "next lint . --fix --ext .js,.jsx,.ts,.tsx",
+    "lint:fix": "npx eslint . --fix --ext .js,.jsx,.ts,.tsx",
     "start": "next start",
     "test": "jest"
   },

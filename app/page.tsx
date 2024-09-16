@@ -28,8 +28,9 @@ const HOME_SLICES: Array<THomeSlice> = [
   {
     element: (
       <h2 className="p-2 bg-gradient-to-r from-gray-300 via-gray-200 to-gray-300 dark:from-gray-800 dark:via-gray-700 dark:to-gray-800 rounded-lg text-2xl uppercase text-center">
-      An entrepreneurial-minded, senior full-stack software engineer with a strong drive for efficient problem-solving, a passion for clean and
-      efficient code, and a desire for continuous learning and innovation.
+        An entrepreneurial-minded, senior full-stack software engineer with a
+        strong drive for efficient problem-solving, a passion for clean and
+        efficient code, and a desire for continuous learning and innovation.
       </h2>
     ),
     text: "The Person",
@@ -38,7 +39,9 @@ const HOME_SLICES: Array<THomeSlice> = [
   {
     element: (
       <>
-        <div className="pb-4 text-black dark:text-white text-center text-xl font-bold">HOVER & CLICK!</div>
+        <div className="pb-4 text-black dark:text-white text-center text-xl font-bold">
+          HOVER & CLICK!
+        </div>
         <a href="/projects" className="flex place-content-center">
           <motion.div
             className="h-[300px] w-[300px] bg-gray-800 rounded-2xl"
@@ -53,7 +56,7 @@ const HOME_SLICES: Array<THomeSlice> = [
               ease: "easeInOut",
               times: [0, 0.2, 0.5, 0.8, 1],
               repeat: Infinity,
-              repeatDelay: 1
+              repeatDelay: 1,
             }}
           />
         </a>
