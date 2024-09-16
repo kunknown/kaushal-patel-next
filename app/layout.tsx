@@ -1,10 +1,10 @@
 import { Inter } from "next/font/google";
-import Navbar from "./lib/ui/navbar/navbar";
+import Navbar from "@/lib/ui/navbar/navbar";
 import { PropsWithChildren } from "react";
-import "./globals.css";
+import "@/globals.css";
 import { DarkThemeContextProvider } from "@/lib/context/dark-theme-context";
 import classNames from "classnames";
-import Footer from "./lib/ui/footer/Footer";
+import Footer from "@/lib/ui/footer/Footer";
 import { Metadata } from "next";
 import { SessionProvider } from "next-auth/react";
 import { NextUiProvider } from "@/lib/context/next-ui";

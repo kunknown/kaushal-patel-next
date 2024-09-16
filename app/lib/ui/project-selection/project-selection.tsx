@@ -1,8 +1,8 @@
 "use client";
 import React, { MutableRefObject, useRef } from "react";
-import ProjectSelectionCard from "./project-selection-card";
 import Image from "next/image";
 import { PROJECTS } from "@/lib/constants/constants";
+import ProjectSelectionCard from "@/lib/ui/project-selection/project-selection-card";
 
 export default function ProjectSelection() {
   let projectSelectionRef = useRef(null);

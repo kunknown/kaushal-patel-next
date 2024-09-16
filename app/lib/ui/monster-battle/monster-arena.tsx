@@ -5,13 +5,13 @@ import {
   TMonster,
 } from "@/app/lib/types-interfaces-enums/types";
 import { useEffect, useState } from "react";
-import MonsterCard from "./monster-card";
-import MonsterBattleHistory from "./monster-battle-history";
+import MonsterCard from "@/lib/ui/monster-battle/monster-card";
+import MonsterBattleHistory from "@/lib/ui/monster-battle/monster-battle-history";
 import {
   MONSTER_ARENA_STEPS,
   MONSTER_ARENA_VIEWS,
 } from "@/app/lib/types-interfaces-enums/enums";
-import MonsterArenaButton from "./monster-arena-button";
+import MonsterArenaButton from "@/lib/ui/monster-battle/monster-arena-button";
 import {
   BreadcrumbItem,
   Breadcrumbs,

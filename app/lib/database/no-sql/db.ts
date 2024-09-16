@@ -1,5 +1,5 @@
 import { ConnectOptions, Mongoose } from "mongoose";
-import { USER_DB } from "./models/user";
+import { USER_DB } from "@/lib/database/no-sql/models/user";
 
 const mongooseUserDbConnectOptions: ConnectOptions = {
   dbName: USER_DB,

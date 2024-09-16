@@ -23,6 +23,8 @@
       }
     ],
     "paths": {
+      "@/api/*": ["./app/api/*"],
+      "@/actions/*": ["./app/actions/*"],
       "@/lib/*": ["./app/lib/*"],
       "@/app/*": ["./app/*"],
       "@/*": ["./*"]
