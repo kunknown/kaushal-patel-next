@@ -1,9 +1,7 @@
 import { configureStore } from "@reduxjs/toolkit";
-import counterReducer from "@/app/projects/practice/memo/testSlice";
 
 const store = configureStore({
   reducer: {
-    counter: counterReducer,
   },
 });
 
