@@ -38,12 +38,12 @@ const HOME_SLICES: Array<THomeSlice> = [
   {
     element: (
       <>
-        <div className="text-black dark:text-white text-center text-xl font-bold">HOVER & CLICK!</div>
+        <div className="pb-4 text-black dark:text-white text-center text-xl font-bold">HOVER & CLICK!</div>
         <a href="/projects" className="flex place-content-center">
           <motion.div
-            className="h-[300px] w-[300px] bg-black dark:bg-white rounded-2xl"
+            className="h-[300px] w-[300px] bg-gray-800 rounded-2xl"
             whileHover={{
-              scale: [0.75, 0.25, 0.75, 0.25, 0.75],
+              scale: [1, 0.25, 0.75, 0.25, 1],
               rotate: [0, 0, 360, 360, 0],
               borderRadius: ["20%", "20%", "50%", "50%", "20%"],
               backgroundColor: "green",
