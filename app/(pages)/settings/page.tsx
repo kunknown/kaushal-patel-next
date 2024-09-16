@@ -1,7 +1,7 @@
 "use client";
 import React, { useContext } from "react";
-import SwitchToggle from "../lib/ui/switch-toggle/switch-toggle";
-import { DarkThemeContext } from ".@/lib/context/dark-theme-context";
+import SwitchToggle from "@/lib/ui/switch-toggle/switch-toggle";
+import { DarkThemeContext } from "@/lib/context/dark-theme-context";
 
 export default function Settings() {
   const { isDarkTheme, setIsDarkTheme } = useContext(DarkThemeContext);

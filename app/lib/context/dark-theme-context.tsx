@@ -1,6 +1,6 @@
 "use client";
 
-import { THEME } from "../types-interfaces-enums/enums";
+import { THEME } from "@/lib/types-interfaces-enums/enums";
 import { PropsWithChildren, createContext, useMemo, useState } from "react";
 
 export type TDarkThemeContext = {

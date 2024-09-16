@@ -1,9 +1,8 @@
 import {
-  TCard,
   TNavigationMenu,
   TProjects,
   TTechStackIcons,
-} from "../types-interfaces-enums/types";
+} from "@/lib/types-interfaces-enums/types";
 
 export const NAVIGATION_MENU: TNavigationMenu[] = [
   { href: "/", name: "Home" },

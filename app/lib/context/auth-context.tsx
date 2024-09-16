@@ -1,7 +1,7 @@
 "use client";
 
 import { PropsWithChildren, createContext, useMemo, useState } from "react";
-import { TAuthContext } from "../types-interfaces-enums/types";
+import { TAuthContext } from "@/lib/types-interfaces-enums/types";
 
 export const AuthContext = createContext<TAuthContext>({
   isAuthenticated: false,

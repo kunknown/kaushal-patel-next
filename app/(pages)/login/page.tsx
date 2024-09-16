@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, FormEvent } from "react";
-import { submitLoginData } from "../actions/user-actions";
+import { submitLoginData } from "@/app/actions/user-actions";
 import { Button, Input, Link } from "@nextui-org/react";
 import { loginErrorStrings } from "@/lib/constants/constants";
 
