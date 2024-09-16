@@ -1,6 +1,6 @@
 {
   "extends": ["next/core-web-vitals", "plugin:prettier/recommended"],
-  "plugins": ["prettier", "prettier-plugin-organize-imports"],
+  "plugins": ["prettier"],
   "rules": {
     "prettier/prettier":  ["error", { "endOfLine": "auto" }]
   }

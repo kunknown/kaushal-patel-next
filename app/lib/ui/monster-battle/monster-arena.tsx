@@ -23,7 +23,6 @@ import {
   Tab,
   Tabs,
 } from "@nextui-org/react";
-import { getMonsterBattleWinner } from "@/app/actions/monster-battle-actions";
 import classNames from "classnames";
 
 export default function MonsterArena({

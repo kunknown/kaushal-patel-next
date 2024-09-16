@@ -9,7 +9,7 @@
     "drizzle:migrate": "npx tsx app/shared/database/sql/scripts/migrate.ts",
     "drizzle:seed": "npx tsx app/shared/database/sql/scripts/seed.ts",
     "drizzle:push": "npx drizzle-kit push:pg",
-    "lint": "next lint",
+    "lint": "npx eslint .",
     "lint:fix": "npx eslint . --fix --ext .js,.jsx,.ts,.tsx",
     "start": "next start",
     "test": "jest"
