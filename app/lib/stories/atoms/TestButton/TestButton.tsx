@@ -22,13 +22,8 @@ export const TestButton = ({
   ...props
 }: TestButtonProps) => {
   return (
-    <button type="button" {...props}>
+    <button type="button" style={{ backgroundColor }} {...props}>
       {label}
-      <style jsx>{`
-        button {
-          background-color: ${backgroundColor};
-        }
-      `}</style>
     </button>
   );
 };

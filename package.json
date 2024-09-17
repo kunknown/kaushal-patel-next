@@ -42,7 +42,8 @@
     "sharp": "^0.33.2",
     "socket.io": "^4.7.5",
     "socket.io-client": "^4.7.5",
-    "three": "^0.164.1"
+    "three": "^0.164.1",
+    "ts-jest": "^29.2.5"
   },
   "devDependencies": {
     "@babel/core": "^7.23.9",
@@ -50,6 +51,7 @@
     "@babel/preset-react": "^7.24.7",
     "@babel/preset-typescript": "^7.23.3",
     "@chromatic-com/storybook": "^1.9.0",
+    "@storybook/addon-a11y": "^8.3.1",
     "@storybook/addon-essentials": "^8.3.1",
     "@storybook/addon-interactions": "^8.3.1",
     "@storybook/addon-links": "^8.3.1",

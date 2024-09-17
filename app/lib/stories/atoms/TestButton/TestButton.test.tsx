@@ -1,4 +1,4 @@
-import { TestButton } from "@/lib/ui-components/atoms/TestButton/TestButton";
+import { TestButton } from "@/lib/stories/atoms/TestButton/TestButton";
 import { render, screen, waitFor } from "@testing-library/react";
 
 describe("button", () => {
