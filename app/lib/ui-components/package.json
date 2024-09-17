@@ -1,0 +1,25 @@
+{
+  "name": "ui-components",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "sb": "storybook dev -p 6006",
+    "sb:build": "storybook build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@chromatic-com/storybook": "^1.9.0",
+    "@storybook/addon-essentials": "^8.3.1",
+    "@storybook/addon-interactions": "^8.3.1",
+    "@storybook/addon-links": "^8.3.1",
+    "@storybook/addon-onboarding": "^8.3.1",
+    "@storybook/blocks": "^8.3.1",
+    "@storybook/nextjs": "^8.3.1",
+    "@storybook/react": "^8.3.1",
+    "@storybook/test": "^8.3.1",
+    "storybook": "^8.3.1"
+  }
+}
