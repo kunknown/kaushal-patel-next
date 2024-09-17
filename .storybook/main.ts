@@ -2,10 +2,8 @@ import type { StorybookConfig } from "@storybook/nextjs";
 
 const config: StorybookConfig = {
   stories: [
-    "../**/*.mdx",
-    "../atoms/**/*.stories.@(js|jsx|mjs|ts|tsx)",
-    "../molecules/**/*.stories.@(js|jsx|mjs|ts|tsx)",
-    "../organisms/**/*.stories.@(js|jsx|mjs|ts|tsx)",
+    "../stories/**/*.mdx",
+    "../stories/**/*.stories.@(js|jsx|mjs|ts|tsx)",
   ],
   addons: [
     "@storybook/addon-onboarding",
@@ -18,6 +16,6 @@ const config: StorybookConfig = {
     name: "@storybook/nextjs",
     options: {},
   },
-  staticDirs: ["..\\..\\..\\..\\public"],
+  staticDirs: ["..\\public"],
 };
 export default config;

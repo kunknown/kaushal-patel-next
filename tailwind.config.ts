@@ -4,21 +4,8 @@ import { nextui } from "@nextui-org/react";
 
 const config: Config = {
   content: [
-    "./app/*.{ts,tsx}",
-    "./app/(pages)/**/*.{ts,tsx}",
-    "./app/actions/**/*.{ts,tsx}",
-    "./app/api/**/*.{ts,tsx}",
-    "./app/lib/constants/**/*.{ts,tsx}",
-    "./app/lib/context/**/*.{ts,tsx}",
-    "./app/lib/database/**/*.{ts,tsx}",
-    "./app/lib/hooks/**/*.{ts,tsx}",
-    "./app/lib/store/**/*.{ts,tsx}",
-    "./app/lib/types-interfaces-enums/**/*.{ts,tsx}",
-    "./app/lib/ui/**/*.{ts,tsx}",
-    "./app/lib/utility/**/*.{ts,tsx}",
-    "./app/lib/ui-components/atoms/**/*.{ts,tsx}",
-    "./app/lib/ui-components/molecules/**/*.{ts,tsx}",
-    "./app/lib/ui-components/organisms/**/*.{ts,tsx}",
+    "./app/**/*.{js,ts,jsx,tsx}",
+    "./stories/**/*.{js,ts,jsx,tsx}",
     "./node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}",
   ],
   darkMode: "class",
