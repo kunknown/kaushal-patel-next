@@ -62,3 +62,9 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
   - 3D Character Builder
   - Video Streaming
   - Live Chat
+- Tech Stack
+  - storybook
+  - jest
+  - graphQL
+  - aws
+  - supabase
