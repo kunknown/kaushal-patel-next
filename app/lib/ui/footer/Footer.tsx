@@ -4,6 +4,7 @@ import React from "react";
 import Image from "next/image";
 import classNames from "classnames";
 import KushIcon from "@/public/kush_2024_cartoon-icon.png";
+import { Link } from "@nextui-org/react";
 
 export default function Footer() {
   return (
@@ -40,8 +41,8 @@ export default function Footer() {
             Back to top
           </button>
         </li>
-        <li>
-          <a
+        <li className="flex gap-4">
+          <Link
             href="https://www.linkedin.com/in/kaushal-patel-119a20113/"
             target="_blank"
           >
@@ -52,7 +53,16 @@ export default function Footer() {
               width={100}
               height={100}
             />
-          </a>
+          </Link>
+          <Link href="https://github.com/kunknown" target="_blank">
+            <Image
+              src="./github.svg"
+              width={100}
+              height={100}
+              alt="github link"
+              className="w-16"
+            />
+          </Link>
         </li>
       </ul>
     </footer>

@@ -76,6 +76,7 @@ export type TTechStackIcons = {
   src: string;
   alt: string;
   text: string;
+  srcDark?: string;
 };
 
 export type TCard = {

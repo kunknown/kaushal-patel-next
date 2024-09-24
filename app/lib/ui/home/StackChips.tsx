@@ -1,17 +1,24 @@
+import { DarkThemeContext } from "@/lib/context/dark-theme-context";
 import { TTechStackIcons } from "@/lib/types-interfaces-enums/types";
 import { Chip } from "@nextui-org/react";
 import Image from "next/image";
+import { useContext } from "react";
 
 export function StackChips({ icons }: { icons: Array<TTechStackIcons> }) {
+  const { isDarkTheme } = useContext(DarkThemeContext);
   return (
     <div className="flex gap-2 md:gap-4 flex-wrap justify-center">
-      {icons.map((icon) => (
+      {icons.map(({ text, src, alt, srcDark }) => (
         <Chip
-          key={icon.text}
+          key={text}
           avatar={
-            <Image src={icon.src} alt={icon.alt} width={100} height={100} />
+            isDarkTheme && srcDark ? (
+              <Image src={srcDark} alt={alt} width={100} height={100} />
+            ) : (
+              <Image src={src} alt={alt} width={100} height={100} />
+            )
           }
-          endContent={<>{icon.text}</>}
+          endContent={<>{text}</>}
           variant="faded"
           size="md"
           radius="md"

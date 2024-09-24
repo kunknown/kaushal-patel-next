@@ -1,23 +1,28 @@
+"use client";
+
+import { DarkThemeContext } from "@/lib/context/dark-theme-context";
 import { TTechStackIcons } from "@/lib/types-interfaces-enums/types";
+import classNames from "classnames";
 import {
   useAnimationFrame,
   useMotionValue,
   useTransform,
   motion,
 } from "framer-motion";
-import { useRef } from "react";
+import { useContext, useRef } from "react";
 
 export default function ParallaxIcon({
   icons,
   baseVelocity = 10,
-}: {
+}: Readonly<{
   icons: Array<TTechStackIcons>;
   baseVelocity: number;
-}) {
+}>) {
+  const { isDarkTheme } = useContext(DarkThemeContext);
   const baseX = useMotionValue(-35);
   const directionFactor = useRef<number>(1);
-  const minPosition = -75;
-  const maxPosition = -7;
+  const minPosition = -90;
+  const maxPosition = 10;
   const x = useTransform(baseX, (v) => `${v}%`);
   useAnimationFrame((t, delta) => {
     let moveBy = directionFactor.current * baseVelocity * (delta / 1000);
@@ -34,10 +39,10 @@ export default function ParallaxIcon({
   return (
     <div className="my-4 overflow-x-hidden whitespace-nowrap flex flex-nowrap">
       <motion.div className="flex align-center" style={{ x }}>
-        {icons.map(({ src, alt }, index) => (
-          <span key={index} className="flex justify-center mr-4">
+        {icons.map(({ src, alt, srcDark }) => (
+          <span key={`${src}`} className="flex justify-center mr-4">
             <motion.img
-              src={src}
+              src={isDarkTheme && srcDark ? srcDark : src}
               alt={alt}
               className="min-w-32 md:min-w-64 h-32 md:h-64"
             />

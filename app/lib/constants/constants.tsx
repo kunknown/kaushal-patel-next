@@ -6,7 +6,6 @@ import {
 
 export const NAVIGATION_MENU: TNavigationMenu[] = [
   { href: "/", name: "Home" },
-  { href: "/about", name: "About" },
   { href: "/projects", name: "Projects" },
 ];
 
@@ -70,41 +69,9 @@ export const TECH_STACK_ICONS: Array<TTechStackIcons> = [
     text: "Next.js",
   },
   {
-    src: "/vercel.svg",
-    alt: "vercel logo",
-    text: "Vercel",
-  },
-  {
-    src: "/typescript.svg",
-    alt: "typescript logo",
-    text: "TypeScript",
-  },
-  {
-    src: "/react.svg",
-    alt: "react logo",
-    text: "React",
-  },
-  {
-    src: "/tailwindcss.svg",
-    alt: "tailwindcss logo",
-    text: "Tailwindcss",
-  },
-  {
-    src: "/postgresql.svg",
-    alt: "postgresql logo",
-    text: "PostgreSQL",
-  },
-  {
-    src: "/framermotion.svg",
-    alt: "framermotion logo",
-    text: "FramerMotion",
-  }, //jest, storybook, node.js, websocket, three.js, dashboard (lib), Auth0, AI integration
-];
-export const ABOUT_TECH_STACK_ICONS: Array<TTechStackIcons> = [
-  {
-    src: "/next.svg",
-    alt: "next.js logo",
-    text: "Next.js",
+    src: "/next-auth.png",
+    alt: "nextauth.js logo",
+    text: "NextAuth.js",
   },
   {
     src: "/vercel.svg",
@@ -135,7 +102,7 @@ export const ABOUT_TECH_STACK_ICONS: Array<TTechStackIcons> = [
     src: "/framermotion.svg",
     alt: "framermotion logo",
     text: "FramerMotion",
-  }, //websocket, three.js, dashboard (lib), Auth0, AI integration
+  },
   {
     src: "/nodejs.svg",
     alt: "nodejs logo",
@@ -166,4 +133,16 @@ export const ABOUT_TECH_STACK_ICONS: Array<TTechStackIcons> = [
     alt: "supabase logo",
     text: "Supabase",
   },
+  {
+    src: "/github_dark.svg",
+    alt: "github logo",
+    text: "Github",
+    srcDark: "/github.svg",
+  },
+  {
+    src: "/git.svg",
+    alt: "git logo",
+    text: "Git",
+  },
+  // websocket, three.js, dashboard (lib), Auth0, AI integration, html, css, express, shopify, redis, figma, prismic, docker
 ];

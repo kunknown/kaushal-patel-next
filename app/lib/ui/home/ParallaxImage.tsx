@@ -24,7 +24,7 @@ export default function ParallaxImage({
         {text}
       </motion.h2>
       <motion.div
-        className="w-screen overflow-hidden"
+        className="w-full overflow-hidden"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.5 }}

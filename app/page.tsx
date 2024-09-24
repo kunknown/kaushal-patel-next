@@ -6,64 +6,85 @@ import { TECH_STACK_ICONS } from "@/lib/constants/constants";
 import ParallaxIcon from "@/lib/ui/home/ParallaxIcon";
 import ParallaxImage from "@/lib/ui/home/ParallaxImage";
 import { StackChips } from "@/lib/ui/home/StackChips";
+import { Button, Image, Link } from "@nextui-org/react";
 
 const HOME_SLICES: Array<THomeSlice> = [
   {
     element: (
       <>
         <StackChips icons={TECH_STACK_ICONS} />
-        <ParallaxIcon
-          baseVelocity={5}
-          icons={[
-            ...TECH_STACK_ICONS,
-            ...TECH_STACK_ICONS,
-            ...TECH_STACK_ICONS,
-          ]}
-        />
+        <ParallaxIcon baseVelocity={5} icons={[...TECH_STACK_ICONS]} />
       </>
     ),
-    text: "The Portfolio Tech stack",
-    key: "portfolio-tech-stack",
+    text: "The tech proficiency",
+    key: "tech-proficiency",
   },
   {
     element: (
       <h2 className="p-2 bg-gradient-to-r from-gray-300 via-gray-200 to-gray-300 dark:from-gray-800 dark:via-gray-700 dark:to-gray-800 rounded-lg text-2xl uppercase text-center">
-        An entrepreneurial-minded, senior full-stack software engineer with a
-        strong drive for efficient problem-solving, a passion for clean and
-        efficient code, and a desire for continuous learning and innovation.
+        Solving every problem with a focus on efficient engineering
       </h2>
     ),
-    text: "The Person",
-    key: "person",
+    text: "The Passion",
+    key: "passion",
   },
   {
     element: (
-      <>
-        <div className="pb-4 text-black dark:text-white text-center text-xl font-bold">
-          HOVER & CLICK!
-        </div>
-        <a href="/projects" className="flex place-content-center">
-          <motion.div
-            className="h-[300px] w-[300px] bg-gray-800 rounded-2xl"
-            whileHover={{
-              scale: [1, 0.25, 0.75, 0.25, 1],
-              rotate: [0, 0, 360, 360, 0],
-              borderRadius: ["20%", "20%", "50%", "50%", "20%"],
-              backgroundColor: "green",
-            }}
-            transition={{
-              duration: 2,
-              ease: "easeInOut",
-              times: [0, 0.2, 0.5, 0.8, 1],
-              repeat: Infinity,
-              repeatDelay: 1,
-            }}
-          />
-        </a>
-      </>
+      <ul className="p-2 bg-gradient-to-r from-gray-300 via-gray-200 to-gray-300 dark:from-gray-800 dark:via-gray-700 dark:to-gray-800 rounded-lg list-disc">
+        <li>
+          <h2 className="text-small md:text-lg font-bold">
+            Leadership & Cross-Functional Collaboration
+          </h2>
+          <p className="text-xs md:text-base">
+            Spearheaded the successful launch of critical project by
+            coordinating with multiple cross-functional teams, both remote and
+            local.
+          </p>
+        </li>
+        <br />
+        <li>
+          <h2 className="text-small md:text-lg font-bold">
+            Full-Stack Development & Real-Time Systems
+          </h2>
+          <p className="text-xs md:text-base">
+            Delivered complex, time-sensitive project using React and Node.js,
+            showcasing strong full-stack development skills.
+          </p>
+        </li>
+        <br />
+        <li>
+          <h2 className="text-small md:text-lg font-bold">
+            Mentorship & Team Growth
+          </h2>
+          <p className="text-xs md:text-base">
+            Enhanced team productivity by mentoring junior developers and
+            driving architectural decisions.
+          </p>
+        </li>
+        <br />
+        <li>
+          <h2 className="text-small md:text-lg font-bold">
+            Process Optimization & Code Quality
+          </h2>
+          <p className="text-xs md:text-base">
+            Revamped testing frameworks, optimized building performance, and
+            improved code review processes.
+          </p>
+        </li>
+        <br />
+        <li>
+          <h2 className="text-small md:text-lg font-bold">
+            UI/UX Enhanceent & Feature Development
+          </h2>
+          <p className="text-xs md:text-base">
+            Improved UI/UX by designing reusable UI components in React and
+            reducing development time.
+          </p>
+        </li>
+      </ul>
     ),
-    text: "The Projects",
-    key: "projects",
+    text: "The Experience",
+    key: "experience",
   },
 ];
 export default function Home() {
