@@ -1,14 +1,17 @@
 "use client";
 
-import { TBattleRecord, TMonster } from "@/shared/types-interfaces-enums/types";
+import {
+  TBattleRecord,
+  TMonster,
+} from "@/app/lib/types-interfaces-enums/types";
 import { useEffect, useState } from "react";
-import MonsterCard from "./monster-card";
-import MonsterBattleHistory from "./monster-battle-history";
+import MonsterCard from "@/lib/ui/monster-battle/monster-card";
+import MonsterBattleHistory from "@/lib/ui/monster-battle/monster-battle-history";
 import {
   MONSTER_ARENA_STEPS,
   MONSTER_ARENA_VIEWS,
-} from "@/shared/types-interfaces-enums/enums";
-import MonsterArenaButton from "./monster-arena-button";
+} from "@/app/lib/types-interfaces-enums/enums";
+import MonsterArenaButton from "@/lib/ui/monster-battle/monster-arena-button";
 import {
   BreadcrumbItem,
   Breadcrumbs,
@@ -20,7 +23,6 @@ import {
   Tab,
   Tabs,
 } from "@nextui-org/react";
-import { getMonsterBattleWinner } from "@/app/actions/monster-battle-actions";
 import classNames from "classnames";
 
 export default function MonsterArena({
@@ -178,12 +180,11 @@ export default function MonsterArena({
             <MonsterArenaButton
               isDisabled={!monsterA || !monsterB}
               onClickHandler={async () => {
-                setBattleRecord(
-                  await getMonsterBattleWinner(
-                    monsterA as TMonster,
-                    monsterB as TMonster,
-                  ),
+                const result = await fetch(
+                  `/api/monster-battle?monsterAId=${monsterA?.id}&monsterBId=${monsterB?.id}`,
                 );
+                const data: TBattleRecord = await result.json();
+                setBattleRecord(data);
               }}
               label="Start Battle"
               isAnimated={isBattleStep}

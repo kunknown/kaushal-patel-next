@@ -1,13 +1,14 @@
 import { Inter } from "next/font/google";
-import Navbar from "./lib/ui/navbar/navbar";
+import Navbar from "@/lib/ui/navbar/navbar";
 import { PropsWithChildren } from "react";
-import "./globals.css";
-import { DarkThemeContextProvider } from "./shared/context/dark-theme-context";
+import "@/app/globals.css";
+import { DarkThemeContextProvider } from "@/lib/context/dark-theme-context";
 import classNames from "classnames";
-import Footer from "./lib/ui/footer/Footer";
+import Footer from "@/lib/ui/footer/Footer";
 import { Metadata } from "next";
 import { SessionProvider } from "next-auth/react";
-import { NextUiProvider } from "@/shared/context/next-ui";
+import { NextUiProvider } from "@/lib/context/next-ui";
+import Template from "@/app/template";
 
 export const metadata: Metadata = {
   description: "Website build using NextJs, React, Node, Vercel",
@@ -28,14 +29,11 @@ export default function RootLayout({ children }: Readonly<PropsWithChildren>) {
     <DarkThemeContextProvider>
       <SessionProvider>
         <body
-          className={classNames(
-            "font-sans bg-gray-100 dark:bg-gray-600",
-            inter.className,
-          )}
+          className={classNames("bg-gray dark:bg-gray-600", inter.className)}
         >
           <NextUiProvider>
             <Navbar />
-            <div className="my-16">{children}</div>
+            <Template key="root-template">{children}</Template>
             <Footer />
           </NextUiProvider>
         </body>

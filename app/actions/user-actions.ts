@@ -4,9 +4,9 @@ import {
   SALT_ROUNDS,
   createAccountErrorStrings,
   loginErrorStrings,
-} from "@/shared/constants/constants";
-import { getUser, insertUser } from "@/shared/database/sql/db";
-import { encryptPassword } from "@/shared/utility/bcrypt-utils";
+} from "@/lib/constants/constants";
+import { getUser, insertUser } from "@/lib/database/sql/db";
+import { encryptPassword } from "@/lib/utility/bcrypt-utils";
 import { AuthError } from "next-auth";
 import { DrizzleError } from "drizzle-orm";
 

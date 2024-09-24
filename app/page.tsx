@@ -1,55 +1,118 @@
-import React from "react";
+"use client";
+import { useRef } from "react";
+import { useScroll, motion, useSpring } from "framer-motion";
+import { THomeSlice } from "@/lib/types-interfaces-enums/types";
+import { TECH_STACK_ICONS } from "@/lib/constants/constants";
+import ParallaxIcon from "@/lib/ui/home/ParallaxIcon";
+import ParallaxImage from "@/lib/ui/home/ParallaxImage";
+import { StackChips } from "@/lib/ui/home/StackChips";
+import { Button, Image, Link } from "@nextui-org/react";
 
+const HOME_SLICES: Array<THomeSlice> = [
+  {
+    element: (
+      <>
+        <StackChips icons={TECH_STACK_ICONS} />
+        <ParallaxIcon baseVelocity={5} icons={[...TECH_STACK_ICONS]} />
+      </>
+    ),
+    text: "The tech proficiency",
+    key: "tech-proficiency",
+  },
+  {
+    element: (
+      <h2 className="p-2 bg-gradient-to-r from-gray-300 via-gray-200 to-gray-300 dark:from-gray-800 dark:via-gray-700 dark:to-gray-800 rounded-lg text-2xl uppercase text-center">
+        Solving every problem with a focus on efficient engineering
+      </h2>
+    ),
+    text: "The Passion",
+    key: "passion",
+  },
+  {
+    element: (
+      <ul className="p-2 bg-gradient-to-r from-gray-300 via-gray-200 to-gray-300 dark:from-gray-800 dark:via-gray-700 dark:to-gray-800 rounded-lg list-disc">
+        <li>
+          <h2 className="text-small md:text-lg font-bold">
+            Leadership & Cross-Functional Collaboration
+          </h2>
+          <p className="text-xs md:text-base">
+            Spearheaded the successful launch of critical project by
+            coordinating with multiple cross-functional teams, both remote and
+            local.
+          </p>
+        </li>
+        <br />
+        <li>
+          <h2 className="text-small md:text-lg font-bold">
+            Full-Stack Development & Real-Time Systems
+          </h2>
+          <p className="text-xs md:text-base">
+            Delivered complex, time-sensitive project using React and Node.js,
+            showcasing strong full-stack development skills.
+          </p>
+        </li>
+        <br />
+        <li>
+          <h2 className="text-small md:text-lg font-bold">
+            Mentorship & Team Growth
+          </h2>
+          <p className="text-xs md:text-base">
+            Enhanced team productivity by mentoring junior developers and
+            driving architectural decisions.
+          </p>
+        </li>
+        <br />
+        <li>
+          <h2 className="text-small md:text-lg font-bold">
+            Process Optimization & Code Quality
+          </h2>
+          <p className="text-xs md:text-base">
+            Revamped testing frameworks, optimized building performance, and
+            improved code review processes.
+          </p>
+        </li>
+        <br />
+        <li>
+          <h2 className="text-small md:text-lg font-bold">
+            UI/UX Enhanceent & Feature Development
+          </h2>
+          <p className="text-xs md:text-base">
+            Improved UI/UX by designing reusable UI components in React and
+            reducing development time.
+          </p>
+        </li>
+      </ul>
+    ),
+    text: "The Experience",
+    key: "experience",
+  },
+];
 export default function Home() {
+  const containerRef = useRef(null);
+  const { scrollYProgress } = useScroll({ container: containerRef });
+  const scaleX = useSpring(scrollYProgress, {
+    damping: 15,
+    restDelta: 0.001,
+    stiffness: 75,
+  });
+
   return (
     <div
-      id="home-page-container"
-      className="mx-auto w-full h-screen container flex flex-col items-center overflow-y-auto overscroll-auto scrollbar-none"
+      ref={containerRef}
+      className="h-screen m-4 max-w-[1000px] overflow-hidden overflow-y-auto overscroll-auto scrollbar-none snap-y snap-mandatory "
     >
-      <div
-        className="w-full min-h-screen bg-fixed bg-center bg-cover bg-no-repeat"
-        style={{
-          backgroundImage: `url(/bulb-earth_1920.jpg)`,
-          opacity: "65%",
-        }}
-      >
-        <div className="h-full flex items-center justify-center text-6xl md:text-9xl text-white">
-          Welcome!
-        </div>
-      </div>
-      <div className="px-2 md:px-4 py-12 md:py-16 text-xl md:text-4xl text-center">
-        I am an entrepreneurial-minded, senior full-stack software engineer with
-        a strong drive for efficient problem-solving, a passion for writing
-        clean and efficient code, and a desire for continuous learning and
-        innovation.
-      </div>
-      <div
-        className="w-full min-h-[300px] bg-fixed bg-center be-cover bg-no-repeat"
-        style={{ backgroundImage: `url(/futuristic_1920.jpg)`, opacity: "65%" }}
-      ></div>
-      <div className="px-2 md:px-4 py-12 md:py-16 text-xl md:text-4xl text-center">
-        My proficiency lies in JavaScript and its frameworks. Specifically,
-        React, Next, and Node. I also have a strong interest in Python and its
-        frameworks.
-      </div>
-      <div
-        className="w-full min-h-[300px] bg-fixed bg-center be-cover bg-no-repeat"
-        style={{
-          backgroundImage: `url(/kush_2024_cartoon.png)`,
-          opacity: "65%",
-        }}
-      ></div>
-      <div className="px-2 md:px-4 py-12 md:py-16 text-xl md:text-4xl text-center">
-        This website is my personal project in works. I will be updating and
-        improving it over time with new features and mini-projects.
-      </div>
-      <div
-        className="w-full min-h-[500px] text-9xl bg-fixed bg-center bg-cover bg-no-repeat"
-        style={{
-          backgroundImage: `url(/bulb-earth_1920.jpg)`,
-          opacity: "65%",
-        }}
-      ></div>
+      {HOME_SLICES.map(({ element, text, key }) => (
+        <ParallaxImage
+          key={key}
+          element={element}
+          text={text}
+          scrollYProgress={scrollYProgress}
+        />
+      ))}
+      <motion.div
+        className="fixed left-0 right-0 h-[5px] bg-white top-16"
+        style={{ scaleX }}
+      />
     </div>
   );
 }

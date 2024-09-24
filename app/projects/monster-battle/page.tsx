@@ -1,9 +1,9 @@
 import React from "react";
 import MonsterArena from "../../lib/ui/monster-battle/monster-arena";
-import { getMonsters } from "@/shared/database/sql/db";
+import { getAllMonsters } from "@/lib/database/sql/db";
 
 export default async function MonsterBattle() {
-  const monsterList = await getMonsters();
+  const monsterList = await getAllMonsters();
   return (
     <div className="flex justify-center">
       <MonsterArena monsterList={monsterList} />

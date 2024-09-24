@@ -1,5 +1,5 @@
 "use client";
-import { TMonster } from "@/app/shared/types-interfaces-enums/types";
+import { TMonster } from "@/app/lib/types-interfaces-enums/types";
 import classNames from "classnames";
 import { Card, CardHeader, CardBody, Image } from "@nextui-org/react";
 import React, { useState } from "react";

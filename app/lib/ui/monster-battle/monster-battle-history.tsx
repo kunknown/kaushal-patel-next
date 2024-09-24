@@ -1,6 +1,6 @@
 "use client";
 
-import { TBattleRecord } from "@/app/shared/types-interfaces-enums/types";
+import { TBattleRecord } from "@/app/lib/types-interfaces-enums/types";
 import React from "react";
 
 export default function MonsterBattleHistory({
