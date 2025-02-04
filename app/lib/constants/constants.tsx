@@ -27,7 +27,7 @@ export const PROJECTS: TProjects[] = [
     title: "Monster Batle",
   },
   {
-    available: true,
+    available: false,
     description: "Build a 3D character, customize it, and save it.",
     id: 4,
     link: "projects/character-builder",
